@@ -1,4 +1,4 @@
-package work_power_example;
+package page_objects;
 
 
 import org.openqa.selenium.By;

@@ -5,9 +5,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-import page_objects.Authorization;
-import page_objects.HomePage;
-import page_objects.PageActions;
+import page_objects.TestBase;
 
 import java.util.List;
 

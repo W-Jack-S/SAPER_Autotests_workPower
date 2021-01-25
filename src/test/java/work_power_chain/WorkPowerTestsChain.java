@@ -1,18 +1,9 @@
 package work_power_chain;
 
-import org.junit.BeforeClass;
 import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
-import page_objects.Authorization;
-import page_objects.HomePage;
-import page_objects.PageActions;
-import work_power_example.TestBase;
-
-import java.util.List;
+import page_objects.TestBase;
 
 import static org.openqa.selenium.By.xpath;
 
