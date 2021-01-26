@@ -1,6 +1,5 @@
 package work_power_chain;
 
-import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import page_objects.TestBase;
@@ -32,7 +31,7 @@ public class CreateCalendar extends TestBase {
         while (act.findAssertBadMethod(xpath("//div[@title='Выбрать' and text()='" + year + "']"))) {
             year++;}
         act.click(calendarCreate);
-        act.textInput(xpath("//input"),Integer.toString(++year));
+        act.textInput(xpath("//input"),Integer.toString(year));
         act.click(create);
         act.find(xpath("//p[2][text()='Календарь создан!']"));
         act.click(xpath("//div[text()='Год']"));

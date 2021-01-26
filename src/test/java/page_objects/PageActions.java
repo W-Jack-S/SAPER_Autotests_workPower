@@ -65,7 +65,7 @@ public class PageActions {
     //ПОИСК И ПРОВЕРКА НАЛИЧИЯ ЭЛЕМЕНТА НА СТРАНИЦЕ С ВОЗВРАТОМ РЕЗУЛЬТАТА TRUE/FALSE ! ИНДУССКИЙ МЕТОД ! ПОЗЖЕ ПОДОБРАТЬ ЯВНЫЕ ОЖИДАНИЯ И УБРАТЬ TRY CATCH
     public boolean findAssertBadMethod(By elementBy) {
         try {
-            driver.manage().timeouts().implicitlyWait(100, TimeUnit.MILLISECONDS);
+            driver.manage().timeouts().implicitlyWait(500, TimeUnit.MILLISECONDS);
             assertTrue(driver.findElement(elementBy).isDisplayed());
             return true;
         } catch (Exception e) {
