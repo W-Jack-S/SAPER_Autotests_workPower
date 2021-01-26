@@ -2,16 +2,15 @@ package page_objects;
 
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
-import org.testng.annotations.DataProvider;
 
 import java.io.FileInputStream;
 import java.io.IOException;
 
 public class ReadFile {
     public Object[][] readExcel() throws IOException {
-        FileInputStream fis = new FileInputStream("src/test/java/dataproviderTest/credentials.xlsx");
+        FileInputStream fis = new FileInputStream("Login_Base.xlsx");
         XSSFWorkbook workbook = new XSSFWorkbook(fis);
-        XSSFSheet sheet = workbook.getSheet("login");
+        XSSFSheet sheet = workbook.getSheet("account");
         int totalRows = sheet.getLastRowNum() - 1;
         int totalColums = sheet.getRow(0).getPhysicalNumberOfCells();
 
@@ -23,8 +22,4 @@ public class ReadFile {
 
         return obj;
     }
-
-
-    }
-}
 }

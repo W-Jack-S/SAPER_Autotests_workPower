@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Test Suite">
+    <test verbose="2" preserve-order="true" name="C:/Users/sinitsa-ss/IdeaProjects/SAPER11/src/test/java">
+        <classes>
+            <class name="work_power_example.AuthorizationTests">
+                <methods>
+                <include name="authorizationTestsKRP"/>
+            </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
