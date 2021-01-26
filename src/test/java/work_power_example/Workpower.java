@@ -20,12 +20,12 @@ public class Workpower extends TestBase {
     public void Start() throws InterruptedException {
         chrome();
         initPatterns();
-        url.saperTest();
+        url.saperDev();
         authorization.saper(user_dep_rdu[0], user_dep_rdu[1]);
         Thread.sleep(1000);
         act.click(calculation);
-        act.moveCursor(BRRM);
-        act.click(BRRM_1);
+        act.moveCursor(brrm);
+        act.click(brrm_1);
     }
 
     @AfterEach //ОБЩЕЕ ОКОНЧАНИЕ КАЖДОГО ТЕСТА

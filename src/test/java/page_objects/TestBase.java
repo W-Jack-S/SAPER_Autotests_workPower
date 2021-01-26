@@ -19,14 +19,23 @@ public class TestBase extends WebDriverInit {
     //СПИСОК ОБЩИХ ЗНАЧЕНИЙ (!!!!ПОЗЖЕ ВЫНЕСТИ ОТДЕЛЬНО!!!!)
 
     public By mainPage = xpath("//div[text()='Главная страница']");
+    public By voidPlace = xpath("//*[@id='root']");
+
+    //ТАБЫ
     public By calculation = xpath("//div[text()='Расчеты']");
     public By nsi = xpath("//div[text()='НСИ']");
     public By calendarTab = xpath("//div[text()='Календарь']");
     public By calendarMenu = xpath("//a[text()='Календарь']");
+    public By brrm = xpath("//div[text()='Блок расчетов рабочей мощности']");
+    public By brrm_1 = xpath("//a[text()='Расчет рабочей мощности по агрегатам электростанции']");
+    public By brgg = xpath("//div[text()='Блок расчетов ГГ']");
+    public By brgg_1 = xpath("//a[text()='Распределение выработки по суткам, агрегатам и ГГ']");
+
+    //КАЛЕНДАРЬ
     public By calendarCreate = xpath("//div[text()='Создать новый календарь']");
     public By create = xpath("//div[text()='Создать']");
-    public By BRRM = xpath("//div[text()='Блок расчетов рабочей мощности']");
-    public By BRRM_1 = xpath("//a[text()='Расчет рабочей мощности по агрегатам электростанции']");
+
+    //РАБОЧАЯ МОЩНОСТЬ
     public By formCalculation = xpath("//div[text()='Формирование расчета']");
     public By startCalculation = xpath("//span[text()=' Запустить расчет ']");
     public By changeMonth = xpath("//div[text()='Месяцы']");
@@ -34,10 +43,15 @@ public class TestBase extends WebDriverInit {
     public By errorIconObjects = xpath("//*[@id='root']/div[1]/div[2]/div[2]/div/div[2]/div[1]/div[2]/div/div/div[1]/div[4]");
     public By errorIconMonth = xpath("//*[@id='root']/div[1]/div[2]/div[2]/div/div[2]/div[1]/div[2]/div/div/div[2]/div[1]");
     public By changeCalculationMethod = xpath("//div[text()='Вариант рабочей мощности']");
-    public By voidPlace = xpath("//*[@id='root']");
     public By calculationDoneSuccess = xpath("//table/tbody/tr[1]/td[1]/div[@title='Расчет завершен']");
 
-    public String[] user_dep_rdu = {"test_1","test_1"};
+    //БАЛАНС
+    public By inputBalance = xpath("//div[text()='Ввод / Просмотр баланса электроэнергии']");
+    public By save = xpath("//div[text()='Сохранить']");
+    public By input = xpath("//input");
+
+    //ПОЛЬЗОВАТЕЛИ
+    public String[] user_dep_rdu = {"test_3","test_3"};
 
     //ИНИЦИАЛИЗАЦИЯ ПАТТЕРНОВ
     public void initPatterns(){

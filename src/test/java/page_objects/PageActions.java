@@ -36,8 +36,13 @@ public class PageActions {
     }
 
     //ПОИСК И ПРОВЕРКА НАЛИЧИЯ ЭЛЕМЕНТА НА СТРАНИЦЕ !!! НЕ ОТРАБАТЫВАЕТ !!! РАЗОБРАТЬСЯ
-    public void findAssert(By elementBy) {
+    public boolean findAssert(By elementBy) {
+        try{
         assertTrue(driver.findElement(elementBy).isDisplayed());
+        return true;
+        }
+        catch (Exception e) {return false;}
+
     }
 
     //ОЧИСТКА И ЗАПОЛНЕНИЕ ПОЛЯ
@@ -68,4 +73,5 @@ public class PageActions {
             return false;
         }
     }
+
 }
