@@ -1,14 +1,15 @@
-package work_power_chain;
+package chains;
 
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import page_objects.TestBase;
 
 import static org.openqa.selenium.By.xpath;
 
-public class CreateCalendar extends TestBase {
+public class CreateEnergyUnit extends TestBase {
     @BeforeEach//АВТОРИЗАЦИЯ ПОЛЬЗОВАТЕЛЕМ ДЕПАРТАМЕНТА РДУ
-    public void powerTestsChainPreconditions () {
+    public void createEnergyUnitPreconditions () {
         chrome();
         initPatterns();
         url.saperDev();
@@ -16,18 +17,18 @@ public class CreateCalendar extends TestBase {
         act.find(mainPage);
     }
 
-   /* @AfterEach //ОБЩЕЕ ОКОНЧАНИЕ КАЖДОГО ТЕСТА
-    public void powerTestsChainend() {
+    @AfterEach //ОБЩЕЕ ОКОНЧАНИЕ КАЖДОГО ТЕСТА
+    public void createEnergyUnitEnd() {
         driver.quit();
-    }*/
+    }
 
     @Test
-    public void calendarTestsChainTest01() {
+    public void createEnergyUnitTest01() {
         act.click(nsi);
-        act.moveCursor(calendarTab);
-        act.click(calendarMenu);
+        act.moveCursor(energyTab);
+        act.click(energyMenu_1);
         act.click(xpath("//div[text()='Год']"));
-        int year = 2000;
+      /*  int year = 2000;
         while (act.findAssertBadMethod(xpath("//div[@title='Выбрать' and text()='" + year + "']"))) {
             year++;}
         act.click(calendarCreate);
@@ -35,6 +36,6 @@ public class CreateCalendar extends TestBase {
         act.click(create);
         act.find(xpath("//p[2][text()='Календарь создан!']"));
         act.click(xpath("//div[text()='Год']"));
-        act.click(xpath("//div[@title='Выбрать' and text()='" + year + "']"));
+        act.click(xpath("//div[@title='Выбрать' and text()='" + year + "']")); */
     }
 }

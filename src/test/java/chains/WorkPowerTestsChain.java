@@ -1,18 +1,10 @@
-package work_power_chain;
+package chains;
 
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import page_objects.TestBase;
 
 import static org.openqa.selenium.By.xpath;
 
 public class WorkPowerTestsChain extends CreateCalendar {
-
-    @Test
-    void workPowerTestsChainTest00() {
-        calendarTestsChainTest01();
-    }
     
     @Test
     void workPowerTestsChainTest01() {

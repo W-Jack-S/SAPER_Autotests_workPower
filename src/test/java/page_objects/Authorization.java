@@ -19,20 +19,32 @@ public class Authorization {
     }
 
     public void saper(String login, String password) {//АВТОРИЗАЦИЯ В САПЭР БЕЗ "ЗАПОМНИТЬ МЕНЯ"
-        driver.findElement(By.xpath(LoginLocator)).sendKeys(login);
-        driver.findElement(By.xpath(PasswordLocator)).sendKeys(password);
+        if (login != null) {
+            driver.findElement(By.xpath(LoginLocator)).sendKeys(login);
+        }
+        if (password != null) {
+            driver.findElement(By.xpath(PasswordLocator)).sendKeys(password);
+        }
         driver.findElement(By.xpath(EnterLocator)).click();
     }
 
     public void demandResponse(String login, String password) {////АВТОРИЗАЦИЯ В DR БЕЗ "ЗАПОМНИТЬ МЕНЯ"
-        driver.findElement(By.xpath(LoginLocator)).sendKeys(login);
-        driver.findElement(By.xpath(PasswordLocator)).sendKeys(password);
+        if (login != null) {
+            driver.findElement(By.xpath(LoginLocator)).sendKeys(login);
+        }
+        if (password != null) {
+            driver.findElement(By.xpath(PasswordLocator)).sendKeys(password);
+        }
         driver.findElement(By.xpath(EnterLocator)).click();
     }
 
     public void krp(String login, String password){
-        driver.findElement(By.xpath(LoginLocator)).sendKeys(login);
-        driver.findElement(By.xpath(PasswordLocator)).sendKeys(password);
+        if (login != null) {
+            driver.findElement(By.xpath(LoginLocator)).sendKeys(login);
+        }
+        if (password != null) {
+            driver.findElement(By.xpath(PasswordLocator)).sendKeys(password);
+        }
         driver.findElement(By.xpath(EnterLocator)).click();
     }
 

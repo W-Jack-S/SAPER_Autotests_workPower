@@ -11,6 +11,7 @@ public class HomePage {
     public void saperTest(){driver.get("http://saper-test.ic.ntcees.ru/");} //САПЭР - ТЕСТОВЫЙ СТЕНД
     public void drDev(){driver.get("https://dr.ic.ntcees.ru/");} //Demand Response - СТЕНД РАЗРАБОТКИ
     public void drTest(){driver.get("https://dr-test.ic.ntcees.ru/login");} //Demand Response - ТЕСТОВЫЙ СТЕНД
+    public void krp(){driver.get("https://ia-ntc-krp.cdu.so/");}
 
     public HomePage(WebDriver driver){
         this.driver = driver;

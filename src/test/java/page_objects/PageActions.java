@@ -1,12 +1,10 @@
 package page_objects;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
-import java.util.concurrent.TimeUnit;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
@@ -17,6 +15,10 @@ public class PageActions {
 
     public PageActions(WebDriver driver) {
         this.driver = driver;
+    }
+
+    public void shortWait(By elementBy) {
+        WebDriverWait wait = new WebDriverWait(driver, 2);
     }
 
     //КЛИК ЛЕВОЙ КОНОПКОЙ МЫШЫ
@@ -62,16 +64,28 @@ public class PageActions {
         driver.findElement(elementBy).sendKeys(text);
     }
 
-    //ПОИСК И ПРОВЕРКА НАЛИЧИЯ ЭЛЕМЕНТА НА СТРАНИЦЕ С ВОЗВРАТОМ РЕЗУЛЬТАТА TRUE/FALSE ! ИНДУССКИЙ МЕТОД ! ПОЗЖЕ ПОДОБРАТЬ ЯВНЫЕ ОЖИДАНИЯ И УБРАТЬ TRY CATCH
+    //ПОИСК И ПРОВЕРКА НАЛИЧИЯ ЭЛЕМЕНТА НА СТРАНИЦЕ С ВОЗВРАТОМ РЕЗУЛЬТАТА TRUE/FALSE ! ПОЗЖЕ ПОДОБРАТЬ ЯВНЫЕ ОЖИДАНИЯ И УБРАТЬ TRY CATCH
     public boolean findAssertBadMethod(By elementBy) {
         try {
-            driver.manage().timeouts().implicitlyWait(500, TimeUnit.MILLISECONDS);
+            shortWait(elementBy);
             assertTrue(driver.findElement(elementBy).isDisplayed());
             return true;
         } catch (Exception e) {
-            driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
             return false;
         }
     }
 
+    public boolean findAssertTrue(By elementBy) {
+        try {
+            assertTrue(driver.findElement(elementBy).isDisplayed());
+            return true;
+        } catch (Exception e) {
+            return false;
+        }
+    }
+
+    public void unhide(String s) {
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("document.querySelector('[class^=\"DropZone__MessageInput\"]').style.display=\"block\"",driver.findElement(By.xpath("//*[@id='root']/div[1]/div[2]/div[2]/div/div[2]/div[1]/div[2]/div[4]/section/div/div/input")), "0");
+    }
 }

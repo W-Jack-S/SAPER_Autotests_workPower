@@ -3,7 +3,6 @@ package page_objects;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-import page_objects.*;
 
 import java.util.List;
 
@@ -30,6 +29,8 @@ public class TestBase extends WebDriverInit {
     public By brrm_1 = xpath("//a[text()='Расчет рабочей мощности по агрегатам электростанции']");
     public By brgg = xpath("//div[text()='Блок расчетов ГГ']");
     public By brgg_1 = xpath("//a[text()='Распределение выработки по суткам, агрегатам и ГГ']");
+    public By energyTab = xpath("//div[text()='Энергетическая схема']");
+    public By energyMenu_1 = xpath("//a[text()='Варианты энергетической схемы']");
 
     //КАЛЕНДАРЬ
     public By calendarCreate = xpath("//div[text()='Создать новый календарь']");
@@ -44,6 +45,7 @@ public class TestBase extends WebDriverInit {
     public By errorIconMonth = xpath("//*[@id='root']/div[1]/div[2]/div[2]/div/div[2]/div[1]/div[2]/div/div/div[2]/div[1]");
     public By changeCalculationMethod = xpath("//div[text()='Вариант рабочей мощности']");
     public By calculationDoneSuccess = xpath("//table/tbody/tr[1]/td[1]/div[@title='Расчет завершен']");
+
 
     //БАЛАНС
     public By inputBalance = xpath("//div[text()='Ввод / Просмотр баланса электроэнергии']");

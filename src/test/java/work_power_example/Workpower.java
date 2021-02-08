@@ -141,7 +141,10 @@ public class Workpower extends TestBase {
     @Test //Выбор другого варианта рабочей мощности
     public void Test10() throws InterruptedException {
         act.click(changeCalculationMethod);
-        act.click(xpath("//div[text()='Вариант 1']"));
+        int numBalance = 1;
+        while (act.findAssertTrue(xpath("//div[text()='Вариант " + numBalance + "']")) == false) {
+            numBalance++;}
+        act.click(xpath("//div[text()='Вариант " + numBalance + "']"));
         act.click(formCalculation);
         Thread.sleep(1000);
         act.click(xpath("//*[@id='root']/div[1]/div[2]/div[2]/div/div[2]/div[1]/div[2]/div/div/div[1]/div[1]/div[2]/div[1]/div[1]/div"));

@@ -1,29 +1,45 @@
 package work_power_example;
 
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.DataProvider;
-import org.testng.annotations.Test;
-import page_objects.ReadFile;
+
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvFileSource;
 import page_objects.TestBase;
 
-import java.io.IOException;
-
 public class AuthorizationTests extends TestBase {
-    @BeforeMethod
-    void authorizationTestsPreconditions () {
+
+    @BeforeEach
+    public void authorizationTestsPreconditions () {
         chrome();
         initPatterns();
+    }
+
+    @ParameterizedTest
+    @CsvFileSource(resources = "/Login_Base_KRP_good.csv", delimiter = ';')
+    public void authorizationTestKRP(String login, String password) {
+        url.krp();
+        authorization.krp(login, password);
+    }
+
+    @ParameterizedTest
+    @CsvFileSource(resources = "/Login_Base_KRP_good.csv", delimiter = ';')
+    public void authorizationTestKRPempty(String login, String password) {
+        url.krp();
+        authorization.krp(login, password);
+    }
+
+
+   /* @ParameterizedTest
+    @CsvFileSource(resources = "/Login_Base_SAPER.csv", delimiter = ';')
+    public void authorizationTestSAPER(String login, String password) {
         url.saperDev();
-    }
-    @DataProvider(name = "LoginExcelDataProvider")
-    public Object[][] excelData() throws IOException {
-        return new ReadFile().readExcel();
+        authorization.krp(login, password);
+    }*/
+
+    @AfterEach
+    public void end(){
+        driver.quit();
     }
 
-    @Test(dataProvider = "LoginExcelDataProvider")
-    void authorizationTestsKRP(String log, String pass){
-        authorization.krp(log, pass);
-
-    }
 }
-//authorizationListExcel
