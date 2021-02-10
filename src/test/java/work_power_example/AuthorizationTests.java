@@ -29,14 +29,6 @@ public class AuthorizationTests extends TestBase {
         authorization.krp(login, password);
     }
 
-
-   /* @ParameterizedTest
-    @CsvFileSource(resources = "/Login_Base_SAPER.csv", delimiter = ';')
-    public void authorizationTestSAPER(String login, String password) {
-        url.saperDev();
-        authorization.krp(login, password);
-    }*/
-
     @AfterEach
     public void end(){
         driver.quit();

@@ -6,6 +6,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class PageActions {
@@ -17,8 +18,9 @@ public class PageActions {
         this.driver = driver;
     }
 
-    public void shortWait(By elementBy) {
+    public void shortWait(By elementBy) throws InterruptedException {
         WebDriverWait wait = new WebDriverWait(driver, 2);
+        wait();
     }
 
     //КЛИК ЛЕВОЙ КОНОПКОЙ МЫШЫ
@@ -42,6 +44,15 @@ public class PageActions {
         try{
         assertTrue(driver.findElement(elementBy).isDisplayed());
         return true;
+        }
+        catch (Exception e) {return false;}
+
+    }
+
+    public boolean dontFindAssert(By elementBy) {
+        try{
+            assertFalse(driver.findElement(elementBy).isDisplayed());
+            return true;
         }
         catch (Exception e) {return false;}
 

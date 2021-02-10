@@ -19,6 +19,12 @@ public class TestBase extends WebDriverInit {
 
     public By mainPage = xpath("//div[text()='Главная страница']");
     public By voidPlace = xpath("//*[@id='root']");
+    public By errorNotification = xpath("//div[2]/p[1][text()='Ошибка!']");
+
+    public By LoginLocator = xpath("//input[@type='text']");
+    public By PasswordLocator = xpath("//input[@type='password']");
+    public By EnterLocator = xpath("//div[text()='Вход']");
+    public By CheckboxLocator = xpath("//*[@id='root']/div[1]/div/div[4]/div/div[1]");
 
     //ТАБЫ
     public By calculation = xpath("//div[text()='Расчеты']");
