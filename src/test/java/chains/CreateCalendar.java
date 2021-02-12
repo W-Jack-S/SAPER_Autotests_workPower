@@ -33,7 +33,7 @@ public class CreateCalendar extends TestBase {
             year++;}
         act.click(calendarCreate);
         act.textInput(xpath("//input"),Integer.toString(year));
-        act.click(create);
+        act.click(xpath("//div[text()='Создать']"));
         act.find(xpath("//p[2][text()='Календарь создан!']"));
         act.click(xpath("//div[text()='Год']"));
         act.click(xpath("//div[@title='Выбрать' and text()='" + year + "']"));

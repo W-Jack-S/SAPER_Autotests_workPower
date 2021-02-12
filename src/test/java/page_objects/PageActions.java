@@ -6,6 +6,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.util.concurrent.TimeUnit;
+
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
@@ -19,7 +21,7 @@ public class PageActions {
     }
 
     public void shortWait(By elementBy) throws InterruptedException {
-        WebDriverWait wait = new WebDriverWait(driver, 2);
+        WebDriverWait wait = new WebDriverWait(driver, 3);
         wait();
     }
 
@@ -78,20 +80,30 @@ public class PageActions {
     //ПОИСК И ПРОВЕРКА НАЛИЧИЯ ЭЛЕМЕНТА НА СТРАНИЦЕ С ВОЗВРАТОМ РЕЗУЛЬТАТА TRUE/FALSE ! ПОЗЖЕ ПОДОБРАТЬ ЯВНЫЕ ОЖИДАНИЯ И УБРАТЬ TRY CATCH
     public boolean findAssertBadMethod(By elementBy) {
         try {
-            shortWait(elementBy);
-            assertTrue(driver.findElement(elementBy).isDisplayed());
+            driver.manage().timeouts().implicitlyWait(1, TimeUnit.SECONDS);
+            driver.findElement(elementBy);
             return true;
         } catch (Exception e) {
+            driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
             return false;
         }
     }
 
     public boolean findAssertTrue(By elementBy) {
         try {
-            assertTrue(driver.findElement(elementBy).isDisplayed());
+            driver.findElement(elementBy);
             return true;
         } catch (Exception e) {
             return false;
+        }
+    }
+
+    public boolean findAssertFalse(By elementBy) {
+        try {
+            driver.findElement(elementBy);
+            return false;
+        } catch (Exception e) {
+            return true;
         }
     }
 

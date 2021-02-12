@@ -40,7 +40,7 @@ public class TestBase extends WebDriverInit {
 
     //КАЛЕНДАРЬ
     public By calendarCreate = xpath("//div[text()='Создать новый календарь']");
-    public By create = xpath("//div[text()='Создать']");
+    public By create = xpath("//div[contains(text(),'Создать')]");
 
     //РАБОЧАЯ МОЩНОСТЬ
     public By formCalculation = xpath("//div[text()='Формирование расчета']");
@@ -52,6 +52,8 @@ public class TestBase extends WebDriverInit {
     public By changeCalculationMethod = xpath("//div[text()='Вариант рабочей мощности']");
     public By calculationDoneSuccess = xpath("//table/tbody/tr[1]/td[1]/div[@title='Расчет завершен']");
 
+    //ЭНЕРГЕТИЧЕСКИЙ УЗЕЛ
+    //public By energyCreate = xpath("//div[text()='Создать узел']");
 
     //БАЛАНС
     public By inputBalance = xpath("//div[text()='Ввод / Просмотр баланса электроэнергии']");
