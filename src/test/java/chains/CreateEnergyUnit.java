@@ -14,21 +14,21 @@ import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.openqa.selenium.By.xpath;
 
-public class CreateEnergyUnit extends TestBase {
-    @BeforeEach//АВТОРИЗАЦИЯ ПОЛЬЗОВАТЕЛЕМ ДЕПАРТАМЕНТА РДУ
-    public void createEnergyUnitPreconditions () {
-        chrome();
-        initPatterns();
-        url.saperDev();
-        authorization.saper(user_dep_rdu[0], user_dep_rdu[1]);
-        act.find(mainPage);
-    }
-/*
-    @AfterEach //ОБЩЕЕ ОКОНЧАНИЕ КАЖДОГО ТЕСТА
-    public void createEnergyUnitEnd() {
-        driver.quit();
-    }
-*/
+public class CreateEnergyUnit extends WorkPowerTestsChain {
+    /*   @BeforeEach//АВТОРИЗАЦИЯ ПОЛЬЗОВАТЕЛЕМ ДЕПАРТАМЕНТА РДУ
+       public void createEnergyUnitPreconditions () {
+           chrome();
+           initPatterns();
+           url.saperDev();
+           authorization.saper(user_dep_rdu[0], user_dep_rdu[1]);
+           act.find(mainPage);
+       }
+
+       @AfterEach //ОБЩЕЕ ОКОНЧАНИЕ КАЖДОГО ТЕСТА
+       public void createEnergyUnitEnd() {
+           driver.quit();
+       }
+   */
     @Test
     public void createEnergyUnitTest01() {
         act.click(nsi);

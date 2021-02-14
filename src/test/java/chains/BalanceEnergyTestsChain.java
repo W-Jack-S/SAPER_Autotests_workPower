@@ -6,7 +6,7 @@ import static java.lang.Thread.sleep;
 import static org.openqa.selenium.By.xpath;
 
 
-public class BalanceEnergyTestsChain extends CreateCalendar {
+public class BalanceEnergyTestsChain extends CreateGeneralGroup {
 
 
 
@@ -20,11 +20,7 @@ public class BalanceEnergyTestsChain extends CreateCalendar {
         int numBalance = 1;
         while (act.findAssertBadMethod(xpath("//span[text()='Баланс" + numBalance + "']"))) {
             numBalance++;}
-        //if (act.findAssert(xpath("//div[text()='Добавить новый вариант']"))){
-          //  act.click(xpath("//div[text()='Добавить новый вариант']"));
-            //}else {
-            act.click(xpath("//div[text()='Создать новый вариант']"));
-        //}
+        act.click(xpath("//div[text()='Создать новый вариант']"));
         act.click(xpath("//*[@id='root']/div[1]/div[2]/div[2]/div/div[2]/div[1]/div[2]/div[1]/div[4]/div[1]/div[1]/div/div/input"));
         act.textInput(xpath("//*[@id='root']/div[1]/div[2]/div[2]/div/div[2]/div[1]/div[2]/div[1]/div[4]/div[1]/div[1]/div/div/input"),"Баланс"+numBalance);
         act.click(xpath("//*[@id='root']/div[1]/div[2]/div[2]/div/div[2]/div[1]/div[2]/div[1]/div[4]/div[1]/div[2]/div/div[1]/div[2]"));

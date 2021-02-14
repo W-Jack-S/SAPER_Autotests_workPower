@@ -35,6 +35,7 @@ public class TestBase extends WebDriverInit {
     public By brrm_1 = xpath("//a[text()='Расчет рабочей мощности по агрегатам электростанции']");
     public By brgg = xpath("//div[text()='Блок расчетов ГГ']");
     public By brgg_1 = xpath("//a[text()='Распределение выработки по суткам, агрегатам и ГГ']");
+    public By brgg_2 = xpath("//a[text()='Расчет пределов ГГ']");
     public By energyTab = xpath("//div[text()='Энергетическая схема']");
     public By energyMenu_1 = xpath("//a[text()='Варианты энергетической схемы']");
 

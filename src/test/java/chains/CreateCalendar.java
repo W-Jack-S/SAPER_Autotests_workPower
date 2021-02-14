@@ -17,11 +17,11 @@ public class CreateCalendar extends TestBase {
         act.find(mainPage);
     }
 
-    @AfterEach //ОБЩЕЕ ОКОНЧАНИЕ КАЖДОГО ТЕСТА
+/*    @AfterEach //ОБЩЕЕ ОКОНЧАНИЕ КАЖДОГО ТЕСТА
     public void powerTestsChainend() {
         driver.quit();
     }
-
+*/
     @Test
     public void calendarTestsChainTest01() {
         act.click(nsi);
