@@ -1,5 +1,6 @@
 package chains;
 
+import com.automation.remarks.video.annotations.Video;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.RepeatedTest;
@@ -26,6 +27,7 @@ public class AuthorizationSAPER extends TestBase {
     //}
 
     @ParameterizedTest
+    @Video
     @CsvFileSource(resources = "/Login_Base_SAPER.csv", delimiter = ';')
     public void authorizationTestSAPER(String login, String password) {
         url.saperTest();

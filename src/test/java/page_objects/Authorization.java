@@ -13,6 +13,8 @@ public class Authorization {
     String PasswordLocator = "//input[@type='password']";
     String EnterLocator = "//div[text()='Вход']";
     String CheckboxLocator = "//*[@id='root']/div[1]/div/div[4]/div/div[1]";
+    String CheckboxLocatorKRP = "//*[@id='root']/div/div/div/div[3]/div[1]/div";
+
 
     public Authorization(WebDriver driver){
         this.driver = driver;
@@ -45,6 +47,17 @@ public class Authorization {
         if (password != null) {
             driver.findElement(By.xpath(PasswordLocator)).sendKeys(password);
         }
+        driver.findElement(By.xpath(EnterLocator)).click();
+    }
+
+    public void krpCheck(String login, String password){
+        if (login != null) {
+            driver.findElement(By.xpath(LoginLocator)).sendKeys(login);
+        }
+        if (password != null) {
+            driver.findElement(By.xpath(PasswordLocator)).sendKeys(password);
+        }
+        driver.findElement(By.xpath(CheckboxLocatorKRP)).click();
         driver.findElement(By.xpath(EnterLocator)).click();
     }
 
